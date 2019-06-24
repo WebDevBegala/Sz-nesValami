@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        margin:0;
+        padding:0;
+        
+    }
+    .bcg{
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(144deg, red 0%, white 100%)
+    }
+    p{
+        background-color: white;
+    }
+    .right{
+        float: right;
+    position: absolute;
+    left: 80%;
+    top: 0;
+    }
+    </style>
+</head>
+<body>
+        
+    <div class="bcg">
+       <div class="left">
+        <input type="color" id="color_one" onchange="color()">
+        <p id="hex_one"></p>
+    </div>      
+        <div style="float: right;"  class="right">
+           <input type="color" id="color_two" onchange="color()">
+            <p id="hex_two"></p>
+        </div>
+    </div>
+    
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script>
+        var background = $("body");
+
+        function color(){
+         $(".bcg").css("background-image","linear-gradient(144deg,"+ $("#color_one").val() +" 0%,"+$("#color_two").val()+ " 100%)")
+            $("#hex_one").text($("#color_one").val())
+            $("#hex_two").text($("#color_two").val())
+        }
+        
+        
+    </script>
+</body>
+</html>
